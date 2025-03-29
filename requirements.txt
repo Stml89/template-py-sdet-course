@@ -1,6 +1,5 @@
 python-dotenv==1.0.1
 flake8==7.1.2
-pycodestyle==2.12.1
 mypy==1.15.0
 ruff==0.9.7
 pylint==3.3.4
