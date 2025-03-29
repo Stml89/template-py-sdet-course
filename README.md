@@ -150,7 +150,7 @@ from your working branch(`<branch name>`) to the main branch(`main` | `master`) 
 13. If everything is correct, merge your changes into the main repository branch.
 
 Note 1: Starting from Homework #7, you will need to create nested directories, such as: `homeworks/hw7/bulls_and_cows`, 
-where solution files for specific tasks should be placed.
+where solution files for specific tasks should be placed. What is more, you need to uncomment tests `tests/test_hw7.py`
 
 Note 2: You can always check the tests (for HW#5: `tests/test_hw5.py`) that will be used to verify your work.
 
@@ -324,8 +324,8 @@ def add_ing(s: str) -> str:
 12. Подождите пока не пройдут(ушпешно!) все автоматические проверки 
 13. Если все хорошо, то можете делать мерж ваших изменений в основную ветку репозитория
 
-Note: Начиная с домашней работы #7, необходимо будет создавать вложенные папки, на пример:
-`homeworks/hw7/bulls_and_cows`, в которых и будет располагаться файлы с решениями для конкретной задачи
+Note: Начиная с домашней работы #7, необходимо будет создавать вложенные папки, на пример: `homeworks/hw7/bulls_and_cows`, 
+в которых и будет располагаться файлы с решениями для конкретной задачи. Так же Вам надо раскомментировать файл с тестами `tests/test_hw7.py`
 
 Note 2: Вы всегда можете посмотреть на тесты(для HW#5: `tests/test_hw5.py`), которые будут запускаться для проверки Вашей работы. 
 
