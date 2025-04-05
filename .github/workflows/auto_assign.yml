@@ -2,7 +2,7 @@ name: Auto Assign Reviewer
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, edited, synchronize, ready_for_review]
 
 permissions:
   pull-requests: write
