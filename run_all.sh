@@ -7,7 +7,7 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 if [[ "$BRANCH" =~ hw([0-9]+) || "$BRANCH" =~ homework([0-9]+) ]]; then
   HW_NUM="${BASH_REMATCH[1]}"
-  echo "📘 Detected Homework #: $HW_NUM"
+  echo "Detected Homework #: $HW_NUM"
 else
   echo "Error: Could not detect HW number from branch '$BRANCH'"
   echo "How to solve: Use branch names like 'hw5' or 'homework7'"
