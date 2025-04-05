@@ -1,16 +1,25 @@
-name: Auto Assign
+name: Auto Assign Reviewer
 
 on:
   pull_request:
-    types: [opened, ready_for_review]
-    branches: [main]
+    types: [opened, reopened, edited, synchronize, ready_for_review]
+
+permissions:
+  pull-requests: write
 
 jobs:
-  add-reviews:
-      runs-on: ubuntu-latest
-      permissions:
-        pull-requests: write
-      steps:
-        - uses: kentaro-m/auto-assign-action@v2.0.0
-          with:
-            configuration-path: '.github/auto_assign_config.yml'
+  assign:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Assign reviewer
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const reviewers = ['Stml89'];
+            await github.rest.pulls.requestReviewers({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              reviewers
+            });
