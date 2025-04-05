@@ -18,4 +18,3 @@ venv/
 .mypy_cache/
 .ruff_cache/
 .pytest_cache/
-test_log.txt
