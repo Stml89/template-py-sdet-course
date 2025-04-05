@@ -56,3 +56,6 @@ exclude = [
     "venv",
     "tests"
 ]
+extend-ignore = [
+    "E501"
+]
