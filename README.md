@@ -343,23 +343,22 @@ Note 3: Смотрите на импорты вверху модуля с тес
 
 - flake8
 ```bash
-    $ flake8 tests/ homeworks/ --count --select=E9,F63,F7,F82 --show-source --statistics
-    $ flake8 tests/ homeworks/ --count --max-complexity=10 --max-line-length=100 --statistics --ignore E501
+    $ flake8 .
 ```
 
 - mypy
 ```bash
-    $ mypy --ignore-missing-imports --install-types --non-interactive --exclude venv .
+    $ mypy .
 ```
 
 - pylint
 ```bash
-    $ pylint --disable=C0112,C0114,C0115,C0116,C0103,R1705,R0903 *.py
+    $ pylint .
 ```
 
 - ruff
 ```bash
-    $ ruff check --output-format=github .
+    $ ruff check .
 ```
 
 ## <a id="title9">Автотесты</a>
