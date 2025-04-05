@@ -334,32 +334,46 @@ Note 3: Смотрите на импорты вверху модуля с тес
 `(*)` Это действие должно было быть пройденным еще во время работы над HW#3, если вы уже это сделали, то сейчас его можно пропустить.
 
 ## <a id="title7">Линтеры</a>
+Прочитайте пару статей про линтеры и зачем они нужны:
 - https://habr.com/ru/companies/oleg-bunin/articles/433480/
 - https://semakin.dev/2020/05/python_linters/
 
 ### <a id="title8">Как запускать на локальной машине</a>
 
-**Внимание! Линтеры запускаются из корня проекта**. Прочитайте пару статей про линтеры и зачем они нужны:
+**Внимание! Линтеры запускаются из корня проекта**. 
 
+Линтеры можно запустить как по отдельности, так и все сразу одной командой
+
+#### С использованием скрипта:
+- Для этого необходимо дать права на выполнение скрипту(сделать 1 раз и навсегда)
+```bash
+    $ chmod +x run_all.sh
+```
+
+- Запустить скрипт
+```bash
+    $ ./run_all.sh
+```
+
+#### По отдельности:
 - flake8
 ```bash
-    $ flake8 tests/ homeworks/ --count --select=E9,F63,F7,F82 --show-source --statistics
-    $ flake8 tests/ homeworks/ --count --max-complexity=10 --max-line-length=100 --statistics --ignore E501
+    $ flake8 .
 ```
 
 - mypy
 ```bash
-    $ mypy --ignore-missing-imports --install-types --non-interactive --exclude venv .
+    $ mypy .
 ```
 
 - pylint
 ```bash
-    $ pylint --disable=C0112,C0114,C0115,C0116,C0103,R1705,R0903 *.py
+    $ pylint .
 ```
 
 - ruff
 ```bash
-    $ ruff check --output-format=github .
+    $ ruff check .
 ```
 
 ## <a id="title9">Автотесты</a>
@@ -369,6 +383,12 @@ Note 3: Смотрите на импорты вверху модуля с тес
 - `"hw5": false` - выключает тесты для домашней работы #5
 
 ### <a id="title11">Как запускать автотесты pytest на локальной машине</a>
+Для всего проекта
 ```bash
-    $ pytest --tb=short --disable-warnings -v
+    $ pytest --tb=short --disable-warnings -v .
+```
+
+Для конкретного файла
+```bash
+    $ pytest --tb=short --disable-warnings -v <filename>
 ```
