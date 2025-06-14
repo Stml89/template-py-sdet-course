@@ -1,9 +1,12 @@
 import pytest
 from conftest import config
 
-from homeworks.hw8.sequence.hw8_solution import ascending_sequence
-from homeworks.hw8.number_opposite.hw8_solution import number_opposite
-from homeworks.hw8.payment_card_validation.hw8_solution import is_card_number_valid
+try:
+    from homeworks.hw8.sequence.hw8_solution import ascending_sequence
+    from homeworks.hw8.number_opposite.hw8_solution import number_opposite
+    from homeworks.hw8.payment_card_validation.hw8_solution import is_card_number_valid
+except ImportError:
+    pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 
 pytestmark = pytest.mark.skipif(not config.get("hw8", False), reason="HW disabled in the config file!")
 

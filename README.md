@@ -45,14 +45,14 @@
 
 ## <a id="title3">Как пользоваться репозиторием</a>
 
-1. Отправьте мне в Discord ваш никнейм на GitHub, найти его можно в ссылке, вида: `https://github.com/<user-name>`. 
-После того, как я добавлю вас в проект в качестве коллабораторов, вы сможете его форкнуть.
-2. Fork репозитория. Почитайте о том, как сделать [форк](https://docs.github.com/ru/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) репозитория
-3. Сделайте `clone` репозитория. Как только репозиторий появится у Вас в аккаунте, Вы можете его [склонировать](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) на локальный компьютер.
+1. Используйте этот репозиторий как темплейт для Вашего проекта.
+Для этого необходимо нажать на кнопку "Use this template", а потом "Create a new repository".
+2. Копия репозитория должна повиться у Вас в аккаунте GitHub.
+3. Сделайте [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) Вашего репозитория на локальный компьютер. 
 ```bash
     $ git clone https://github.com/<user-name>/<repository>.git
 ```
-4. `(*)` Включить GitHub Actions
+4. `(*)` Включить GitHub Actions, если они выключены.
 По умолчанию GitHub отключает `forkflows` в GitHub Action в репозиториях которые были форкнуты(`fork`). Чтобы включить 
 `forkflows` GitHub Action, откройте вкладку Actions вашего репозитория `<repository>` и нажмите на большую зеленую 
 кнопку: `I understand my forkflows, go ahead and enable them`
@@ -85,9 +85,9 @@
 8. Создайте папку(-и) и файл, если их нету(для первых домашних работ они уже созданы). Для последующих домашних работ 
 папки и файлы необходимо будет создавать самостоятельно.
 ```bash
-    $ mkdir hw7
-    $ cd hw7
-    $ touch hw7_solution.py
+    $ mkdir hw5
+    $ cd hw5
+    $ touch hw5_solution.py
     $ touch __init__.py
 ```
 
@@ -138,7 +138,7 @@ def add_ing(s: str) -> str:
 14. Создайте [Pull Request](https://docs.github.com/ru/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) 
 из рабочей ветки(`homework5`) в основную ветку(`main` | `master`) ВАШЕГО репозитория. Название pull request'a должно быть следующим: `Homework5: <Name> <Surname>`
 15. Подождите пока не пройдут(ушпешно!) все автоматические проверки 
-16. Если все хорошо, то можете делать мерж ваших изменений в основную ветку репозитория
+16. Если все хорошо, то можете делать слияние ваших изменений в основную ветку репозитория
 
 Note: Начиная с домашней работы #7, необходимо будет создавать вложенные папки, на пример: `homeworks/hw7/bulls_and_cows.py`, 
 в которых и будет располагаться файлы с решениями для конкретной задачи.

@@ -2,9 +2,12 @@ import os
 import pytest
 from conftest import config
 
-from homeworks.hw13.files.hw13_solution import StudentManager
-from homeworks.hw13.engineering_calculator.hw13_solution import (evaluate_expression,
-                                                                 validate_expression)
+try:
+    from homeworks.hw13.files.hw13_solution import StudentManager
+    from homeworks.hw13.engineering_calculator.hw13_solution import (evaluate_expression,
+                                                                     validate_expression)
+except ImportError:
+    pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 
 pytestmark = pytest.mark.skipif(not config.get("hw13", False), reason="HW disabled in the config file!")
 

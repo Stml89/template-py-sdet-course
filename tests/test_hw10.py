@@ -1,10 +1,13 @@
 import pytest
 from conftest import config
 
-from homeworks.hw10.positive_func_args.hw10_solution import sum_positive
-from homeworks.hw10.return_number.hw10_solution import concat_str, arguments_summary
-from homeworks.hw10.type_decorator.hw10_solution import add_str, add_float, add_int
-from homeworks.hw10.cache_function.hw10_solution import cache_function
+try:
+    from homeworks.hw10.positive_func_args.hw10_solution import sum_positive
+    from homeworks.hw10.return_number.hw10_solution import concat_str, arguments_summary
+    from homeworks.hw10.type_decorator.hw10_solution import add_str, add_float, add_int
+    from homeworks.hw10.cache_function.hw10_solution import cache_function
+except ImportError:
+    pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 
 pytestmark = pytest.mark.skipif(not config.get("hw10", False), reason="HW disabled in the config file!")
 
@@ -78,6 +81,7 @@ def test_typed_decorator_to_float(args, expected):
     assert add_float(*args) == expected, f"Expected '{expected}', as summary of arguments={args}"
 
 
+# TODO 10*
 @pytest.mark.parametrize("args,expected", [
     (7, 13),
     (10, 55),

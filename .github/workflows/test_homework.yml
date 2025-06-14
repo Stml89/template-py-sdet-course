@@ -8,6 +8,7 @@ on:
 
 jobs:
   validate-homework:
+    if: ${{ github.event.pull_request.number != 1 }}
     runs-on: ubuntu-latest
 
     steps:

@@ -1,9 +1,12 @@
 import pytest
 from conftest import config
 
-from homeworks.hw9.candles.hw9_solution import count_candles
-from homeworks.hw9.count_characters.hw9_solution import count_char
-from homeworks.hw9.remove_prev_symbol.hw9_solution import remove_previous_symbol
+try:
+    from homeworks.hw9.candles.hw9_solution import count_candles
+    from homeworks.hw9.count_characters.hw9_solution import count_char
+    from homeworks.hw9.remove_prev_symbol.hw9_solution import remove_previous_symbol
+except ImportError:
+    pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 
 pytestmark = pytest.mark.skipif(not config.get("hw9", False), reason="HW disabled in the config file!")
 

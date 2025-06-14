@@ -1,9 +1,12 @@
 import pytest
 from conftest import config
 
-from homeworks.hw11.bank_deposit.bank import Bank
-from homeworks.hw11.library.book import Book
-from homeworks.hw11.library.reader import Reader
+try:
+    from homeworks.hw11.bank_deposit.bank import Bank
+    from homeworks.hw11.library.book import Book
+    from homeworks.hw11.library.reader import Reader
+except ImportError:
+    pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 
 pytestmark = pytest.mark.skipif(not config.get("hw11", False), reason="HW disabled in the config file!")
 

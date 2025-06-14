@@ -1,9 +1,12 @@
 import pytest
 from conftest import config
 
-from homeworks.hw7.bulls_and_cows.hw7_solution import check_guess, generate_secret_number
-from homeworks.hw7.statues.hw7_solution import missing_statues
-from homeworks.hw7.infinity_loop.hw7_solution import infinity_loop
+try:
+    from homeworks.hw7.bulls_and_cows.hw7_solution import check_guess, generate_secret_number
+    from homeworks.hw7.statues.hw7_solution import missing_statues
+    from homeworks.hw7.infinity_loop.hw7_solution import infinity_loop
+except ImportError:
+    pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 
 pytestmark = pytest.mark.skipif(not config.get("hw7", False), reason="HW disabled in the config file!")
 

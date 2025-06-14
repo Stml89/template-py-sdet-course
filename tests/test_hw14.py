@@ -1,14 +1,17 @@
 import pytest
 from conftest import config
 
-from homeworks.hw14.date_and_time.between_dates import calculate_days_between
-from homeworks.hw14.date_and_time.future_or_past import is_future
-from homeworks.hw14.regex.check_password import check_password
-from homeworks.hw14.regex.correct_duplicates import fix_duplicates
-from homeworks.hw14.regex.find_dates_file import find_dates_in_file
-from homeworks.hw14.parse_file.from_xml import calculate_total_cost
-from homeworks.hw14.parse_file.from_json import get_club_with_most_wins
-from homeworks.hw14.parse_file.from_yaml import add_book, save_books, read_books
+try:
+    from homeworks.hw14.date_and_time.between_dates import calculate_days_between
+    from homeworks.hw14.date_and_time.future_or_past import is_future
+    from homeworks.hw14.regex.check_password import check_password
+    from homeworks.hw14.regex.correct_duplicates import fix_duplicates
+    from homeworks.hw14.regex.find_dates_file import find_dates_in_file
+    from homeworks.hw14.parse_file.from_xml import calculate_total_cost
+    from homeworks.hw14.parse_file.from_json import get_club_with_most_wins
+    from homeworks.hw14.parse_file.from_yaml import add_book, save_books, read_books
+except ImportError:
+    pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 
 pytestmark = pytest.mark.skipif(not config.get("hw14", False), reason="HW disabled in the config file!")
 

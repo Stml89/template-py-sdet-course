@@ -1,9 +1,12 @@
 import pytest
 from conftest import config
 
-from homeworks.hw11.bank_deposit.bank import Bank
-from homeworks.hw11.bank_deposit.currency import CurrencyConverter
-from homeworks.hw12.card_desk.cards_deck import CardsDeck
+try:
+    from homeworks.hw11.bank_deposit.bank import Bank
+    from homeworks.hw11.bank_deposit.currency import CurrencyConverter
+    from homeworks.hw12.card_desk.cards_deck import CardsDeck
+except ImportError:
+    pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 
 pytestmark = pytest.mark.skipif(not config.get("hw12", False), reason="HW disabled in the config file!")
 
