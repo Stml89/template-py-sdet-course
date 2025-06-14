@@ -2,7 +2,9 @@ import pytest
 from conftest import config
 
 try:
-    from homeworks.hw6.hw6_solution import level_up, motor_time, time_converter
+    from homeworks.hw6.hw6_solution import (level_up,
+                                            motor_time,
+                                            time_converter)
 except ImportError:
     pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 

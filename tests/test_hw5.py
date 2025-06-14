@@ -1,11 +1,14 @@
 import pytest
 from conftest import config
 
-from homeworks.hw5.hw5_solution import (change_symbol, add_ing,
-                                        change_order, clean_string,
-                                        to_capitalize, to_list,
-                                        formatting, to_string,
-                                        insert_to_list, delete_from_list)
+try:
+    from homeworks.hw5.hw5_solution import (change_symbol, add_ing,
+                                            change_order, clean_string,
+                                            to_capitalize, to_list,
+                                            formatting, to_string,
+                                            insert_to_list, delete_from_list)
+except ImportError:
+    pytest.skip("Module(s) does not exist or have incorrect path", allow_module_level=True)
 
 pytestmark = pytest.mark.skipif(not config.get("hw5", False), reason="HW disabled in the config file!")
 
