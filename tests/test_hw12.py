@@ -15,7 +15,7 @@ pytestmark = pytest.mark.skipif(not config.get("hw12", False), reason="HW disabl
     ("USD", "BYN", 1000, (3267.7, "BYN")),
     ("EUR", "BYN", 1000, (3399, "BYN")),
     ("BYN", "USD", 1000, (306.3, "USD")),
-    ("BYN", "EUR", 1000, (294.2, "USD")),
+    ("BYN", "EUR", 1000, (294.2, "EUR")),
     ("USD", "EUR", 1000, (951.8, "EUR")),
     ("EUR", "USD", 1000, (1050.6, "USD")),
 ])
