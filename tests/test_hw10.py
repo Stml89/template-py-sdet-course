@@ -81,7 +81,7 @@ def test_typed_decorator_to_float(args, expected):
     assert add_float(*args) == expected, f"Expected '{expected}', as summary of arguments={args}"
 
 
-# TODO 10*
+@pytest.mark.skipif(not config.get("hw10*", False), reason="HW extra part was disabled in the config file!")
 @pytest.mark.parametrize("args,expected", [
     (7, 13),
     (10, 55),
